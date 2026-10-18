@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# playwright outputs
+test-results/
+playwright-report/
+blob-report/
+allure-results/
+.last-run.json
+
+# env & secrets
+.env
+.env.*
+!.env.example
+
+# tooling
+coverage/
+dist/
+*.tsbuildinfo
+.eslintcache
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
