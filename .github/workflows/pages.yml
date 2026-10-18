@@ -26,7 +26,19 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check whether GitHub Pages is enabled for this repository
+        id: pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" --silent 2>/dev/null; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages is not enabled; skipping report publication."
+          fi
       - name: Download merged report from the CI run
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/download-artifact@v4
         with:
           name: playwright-report
@@ -34,8 +46,11 @@ jobs:
           run-id: ${{ github.event.workflow_run.id || github.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/configure-pages@v5
+        if: steps.pages.outputs.enabled == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.pages.outputs.enabled == 'true'
         with:
           path: site
       - id: deployment
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/deploy-pages@v4
