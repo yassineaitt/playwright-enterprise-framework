@@ -6,7 +6,15 @@ import prettier from 'eslint-config-prettier';
 import globals from 'globals';
 
 export default tseslint.config(
-  { ignores: ['node_modules/**', 'playwright-report/**', 'test-results/**', 'blob-report/**', 'dist/**'] },
+  {
+    ignores: [
+      'node_modules/**',
+      'playwright-report/**',
+      'test-results/**',
+      'blob-report/**',
+      'dist/**',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,

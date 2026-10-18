@@ -26,7 +26,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "browsers:install": "playwright install --with-deps"
+    "browsers:install": "playwright install --with-deps",
+    "prepare": "husky"
   },
   "keywords": [
     "playwright",
@@ -37,6 +38,8 @@
     "e2e"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "1.64.1",
     "@types/node": "22.20.5",
@@ -44,9 +47,20 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^2.12.1",
     "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.9.10",
     "typescript": "5.9.3",
     "typescript-eslint": "^8.71.2"
   },
-  "type": "module"
+  "type": "module",
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{js,json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
 }
