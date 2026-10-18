@@ -6,7 +6,7 @@ import { z } from 'zod';
  * and are validated once at startup so misconfiguration fails fast, not mid-run.
  */
 const EnvSchema = z.object({
-  BASE_URL: z.url().default('https://demo.playwright.dev/todomvc'),
+  BASE_URL: z.url().default('https://demo.playwright.dev/todomvc/'),
   API_BASE_URL: z.url().default('https://restful-booker.herokuapp.com'),
   API_USERNAME: z.string().min(1).default('admin'),
   API_PASSWORD: z.string().min(1).default('password123'),

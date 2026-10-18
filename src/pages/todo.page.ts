@@ -10,7 +10,7 @@ export type TodoFilter = 'All' | 'Active' | 'Completed';
  * Every locator is a lazy getter so it resolves fresh on each use.
  */
 export class TodoPage extends BasePage {
-  protected readonly path = '/';
+  protected readonly path = './';
 
   readonly newTodoInput: Locator;
   readonly items: Locator;

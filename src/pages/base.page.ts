@@ -8,7 +8,7 @@ import type { Locator, Page } from '@playwright/test';
 export abstract class BasePage {
   protected constructor(protected readonly page: Page) {}
 
-  /** Relative path from baseURL this page lives at. */
+  /** Path relative to baseURL (which must end with '/'). Use './' for the app root. */
   protected abstract readonly path: string;
 
   async goto(): Promise<this> {
