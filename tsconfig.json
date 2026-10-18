@@ -23,5 +23,5 @@
       "@data/*": ["src/data/*"]
     }
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts", "eslint.config.js"]
+  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts", "*.config.js"]
 }
