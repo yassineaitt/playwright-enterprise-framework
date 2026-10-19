@@ -1,0 +1,38 @@
+<testsuites id="" name="" tests="15" failures="0" skipped="0" errors="0" time="1.9947439999999999">
+<testsuite name="api/auth.spec.ts" timestamp="2026-10-19T01:25:06.909Z" hostname="api" tests="2" failures="0" skipped="0" time="0.439" errors="0">
+<testcase name="POST /auth › issues a token for valid credentials" classname="api/auth.spec.ts" time="0.227">
+</testcase>
+<testcase name="POST /auth › rejects bad credentials with a reason (HTTP 200 by design)" classname="api/auth.spec.ts" time="0.212">
+</testcase>
+</testsuite>
+<testsuite name="api/booking.crud.spec.ts" timestamp="2026-10-19T01:25:06.909Z" hostname="api" tests="7" failures="0" skipped="0" time="1.913" errors="0">
+<testcase name="Booking CRUD › creates a booking and echoes it back with an id" classname="api/booking.crud.spec.ts" time="0.317">
+</testcase>
+<testcase name="Booking CRUD › reads a booking by id" classname="api/booking.crud.spec.ts" time="0.337">
+</testcase>
+<testcase name="Booking CRUD › lists booking ids filtered by name" classname="api/booking.crud.spec.ts" time="0.267">
+</testcase>
+<testcase name="Booking CRUD › fully updates a booking with PUT" classname="api/booking.crud.spec.ts" time="0.241">
+</testcase>
+<testcase name="Booking CRUD › partially updates a booking with PATCH" classname="api/booking.crud.spec.ts" time="0.323">
+</testcase>
+<testcase name="Booking CRUD › deletes a booking and subsequent reads return 404" classname="api/booking.crud.spec.ts" time="0.3">
+</testcase>
+<testcase name="Booking CRUD › created booking matches the full response contract" classname="api/booking.crud.spec.ts" time="0.128">
+</testcase>
+</testsuite>
+<testsuite name="api/booking.negative.spec.ts" timestamp="2026-10-19T01:25:06.909Z" hostname="api" tests="6" failures="0" skipped="0" time="1.234" errors="0">
+<testcase name="Booking – negative paths › GET unknown id returns 404" classname="api/booking.negative.spec.ts" time="0.185">
+</testcase>
+<testcase name="Booking – negative paths › PUT without a token is forbidden" classname="api/booking.negative.spec.ts" time="0.257">
+</testcase>
+<testcase name="Booking – negative paths › PUT with an invalid token is forbidden" classname="api/booking.negative.spec.ts" time="0.24">
+</testcase>
+<testcase name="Booking – negative paths › DELETE without a token is forbidden and leaves the booking intact" classname="api/booking.negative.spec.ts" time="0.274">
+</testcase>
+<testcase name="Booking – negative paths › POST with a missing required field is rejected" classname="api/booking.negative.spec.ts" time="0.143">
+</testcase>
+<testcase name="Booking – negative paths › POST with a non-JSON body is rejected" classname="api/booking.negative.spec.ts" time="0.135">
+</testcase>
+</testsuite>
+</testsuites>

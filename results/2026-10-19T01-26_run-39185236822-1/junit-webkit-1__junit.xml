@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="17.144909">
+<testsuite name="ui/todo.regression.spec.ts" timestamp="2026-10-19T01:25:45.441Z" hostname="webkit" tests="7" failures="0" skipped="0" time="53.264" errors="0">
+<testcase name="TodoMVC – regression › creating › trims whitespace from the title" classname="ui/todo.regression.spec.ts" time="5.439">
+</testcase>
+<testcase name="TodoMVC – regression › creating › hides main and footer sections when there are no todos" classname="ui/todo.regression.spec.ts" time="5.429">
+</testcase>
+<testcase name="TodoMVC – regression › editing › renames a todo" classname="ui/todo.regression.spec.ts" time="12.727">
+</testcase>
+<testcase name="TodoMVC – regression › editing › removes a todo when the edited title is empty" classname="ui/todo.regression.spec.ts" time="12.566">
+</testcase>
+<testcase name="TodoMVC – regression › editing › cancels the edit on Escape" classname="ui/todo.regression.spec.ts" time="7.056">
+</testcase>
+<testcase name="TodoMVC – regression › bulk actions › toggle-all completes and re-activates every todo" classname="ui/todo.regression.spec.ts" time="7.7">
+</testcase>
+<testcase name="TodoMVC – regression › bulk actions › clear completed removes only completed todos" classname="ui/todo.regression.spec.ts" time="2.347">
+</testcase>
+</testsuite>
+</testsuites>

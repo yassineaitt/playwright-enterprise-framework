@@ -1,0 +1,20 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="6.979978">
+<testsuite name="ui/todo.regression.spec.ts" timestamp="2026-10-19T01:25:20.156Z" hostname="firefox" tests="4" failures="0" skipped="0" time="13.313" errors="0">
+<testcase name="TodoMVC – regression › filtering › shows only active todos" classname="ui/todo.regression.spec.ts" time="2.934">
+</testcase>
+<testcase name="TodoMVC – regression › filtering › shows only completed todos" classname="ui/todo.regression.spec.ts" time="3.4">
+</testcase>
+<testcase name="TodoMVC – regression › filtering › filter is reflected in the URL and survives back navigation" classname="ui/todo.regression.spec.ts" time="3.503">
+</testcase>
+<testcase name="TodoMVC – regression › persistence › keeps todos and completion state across a reload" classname="ui/todo.regression.spec.ts" time="3.476">
+</testcase>
+</testsuite>
+<testsuite name="ui/todo.smoke.spec.ts" timestamp="2026-10-19T01:25:20.156Z" hostname="firefox" tests="3" failures="0" skipped="0" time="3.859" errors="0">
+<testcase name="TodoMVC – smoke › creates a todo and shows it in the list" classname="ui/todo.smoke.spec.ts" time="1.308">
+</testcase>
+<testcase name="TodoMVC – smoke › marks a todo as completed" classname="ui/todo.smoke.spec.ts" time="1.337">
+</testcase>
+<testcase name="TodoMVC – smoke › deletes a todo" classname="ui/todo.smoke.spec.ts" time="1.214">
+</testcase>
+</testsuite>
+</testsuites>
