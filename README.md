@@ -124,6 +124,9 @@ flowchart LR
   traces, videos and screenshots attached for failures only.
 - `pages.yml` publishes that report to GitHub Pages after every `main` run (green or red).
 - `workflow_dispatch` accepts a `grep` input, so a `@smoke`-only run is one click away.
+- Every job also uploads its JUnit XML; the `flaky-radar` job feeds it to
+  [flaky-test-radar](https://github.com/yassineaitt/flaky-test-radar), which keeps a rolling
+  history on the `flaky-radar-history` branch and writes a flakiness summary to the run.
 - Retries are `2` in CI and `0` locally, so flakiness shows up on the laptop rather than being
   hidden by the pipeline.
 

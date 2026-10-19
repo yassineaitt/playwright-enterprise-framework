@@ -56,6 +56,12 @@ jobs:
           name: blob-report-api
           path: blob-report
           retention-days: 7
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: junit-api
+          path: test-results/junit.xml
+          retention-days: 7
 
   ui:
     name: UI · ${{ matrix.browser }} · shard ${{ matrix.shard }}/2
@@ -85,6 +91,12 @@ jobs:
         with:
           name: blob-report-${{ matrix.browser }}-${{ matrix.shard }}
           path: blob-report
+          retention-days: 7
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: junit-${{ matrix.browser }}-${{ matrix.shard }}
+          path: test-results/junit.xml
           retention-days: 7
       - name: Upload traces/videos on failure
         uses: actions/upload-artifact@v7
@@ -138,3 +150,15 @@ jobs:
           cache-to: type=gha,mode=max
       - name: Smoke-run the image (API project, no browser needed)
         run: docker run --rm playwright-enterprise-framework:ci --project=api --grep @smoke --reporter=list
+
+  flaky-radar:
+    name: Flaky Test Radar
+    needs: [api, ui]
+    if: always() && github.event_name != 'pull_request'
+    permissions:
+      contents: write
+      actions: read
+    uses: yassineaitt/flaky-test-radar/.github/workflows/radar.yml@main
+    with:
+      artifact-pattern: junit-*
+      max-runs: 50
